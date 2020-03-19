@@ -1,8 +1,29 @@
+
 .header_container {
   min-width: 100vw;
   background-color: #4267B2;
   display: inline-flex;
   justify-content: space-between;
+
+  .item{
+    background-color: transparent;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    height: 27px;
+    line-height: 28px;
+    padding: 0 10px 1px;
+    position: relative;
+    text-decoration: none;
+    vertical-align: top;
+    white-space: nowrap;
+
+    .a{
+      cursor: pointer;
+    }
+  }
 }
 
 .body {
