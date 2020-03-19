@@ -1,0 +1,16 @@
+.create_button {
+  color: #1D9AF2;
+  background-color: #E9EBEE;
+  border: 1px solid #1D9AF2;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  height: 32px;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
+    transform: translateX(-3px);
+  }
+}
