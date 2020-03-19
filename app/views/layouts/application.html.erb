@@ -11,7 +11,7 @@
 
 
 <header>
-  <div class="container">
+  <div class="header_container">
     <div class="item">logo</div>
     <div class="item">検索</div>
     <div class="item">login名 or 新規登録</div>
@@ -22,14 +22,18 @@
 </header>
 
 <body>
-<div class="infomation">
-  <% if flash.notice.present? %>
-    <div class="alert alert-success">
-      <%= flash[:notice] %>
+<div class="body">
+  <div class="body_mid">
+    <div class="infomation">
+      <% if flash.notice.present? %>
+        <div class="alert alert-success">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+    <%= yield %>
+  </div>
 </div>
-<%= yield %>
 </body>
 
 </html>

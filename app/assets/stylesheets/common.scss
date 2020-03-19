@@ -1,3 +1,43 @@
-.container {
+.header_container {
+  min-width: 100vw;
+  background-color: #4267B2;
   display: inline-flex;
+  justify-content: space-between;
+}
+
+.body{
+  background-color: #E9EBEE;
+  min-width: 100vw;
+  /*min-height: calc(100-header); */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.body_mid{
+  width: 80vw;
+}
+
+
+.tweet_box{
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+
+  .tweet_head{
+    display: flex;
+    justify-content: space-between;
+
+    .tweet_head_index_user_created_at{
+    }
+
+    .tweet_head_buttons{
+    }
+  }
+
+  .tweet_content_picture{
+  }
 }
