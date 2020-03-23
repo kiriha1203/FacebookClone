@@ -5,10 +5,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      redirect_to session_path(@user.id)
+    confirm_user = User.find_by(email: @user.email)
+    if confirm_user
+      redirect_to new_user_path, notice: "そのemailは既に登録されています。"
     else
-      render :new
+      @user.save
+      redirect_to new_session_path
     end
   end
 
