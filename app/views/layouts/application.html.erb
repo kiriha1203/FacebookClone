@@ -7,18 +7,30 @@
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 
 
 <header>
   <div class="header_container">
-    <div class="item">logo</div>
-    <div class="item">検索</div>
-    <div class="item">login名 or 新規登録</div>
-    <div class="item">
-      <%= link_to 'ホーム', tasks_path %>
-    </div>
-    <div class="item">logout or login</div>
+    <div class="headers">logo</div>
+    <div class="headers">検索</div>
+    <div class="headers">
+      <% if logged_in? %>
+        <%= link_to "Profile", user_path(current_user.id) %>
+      <% else %>
+        <%= link_to "新規登録", new_user_path %>
+      <% end %></div>
+    <div class="headers">
+      <%= link_to "ホーム", tasks_path%></div>
+    <div class="headers">
+      <% if logged_in? %>
+        <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+      <% else %>
+        <%= link_to "Login", new_session_path %>
+      <% end %></div>
   </div>
 
 </header>
@@ -27,6 +39,9 @@
 <div class="body">
   <div class="body_mid">
     <div class="infomation">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
       <% if flash.notice.present? %>
         <div class="alert alert-success">
           <%= flash[:notice] %>

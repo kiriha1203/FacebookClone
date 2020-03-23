@@ -1,0 +1,36 @@
+<div class="create_account_body">
+
+  <div class="create_account_description">
+    <h5>FacebookCloneを使うと、友達や同僚、同級生、仲間たちとつながりを深められます。
+      ケータイ、スマートフォンからもアクセスできます。</h5>
+    <p class="resize_image">
+     <img src="/assets/img_logo_create_account.jpg" alt="">
+    </p>
+  </div>
+
+  <div class="create_account_form">
+    <h3>新規登録</h3>
+
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form_with(model: @user, local: true) do |f| %>
+      <div class="item"><%= f.label '名前' %></div>
+      <div class="item"><%= f.text_field :name %></div>
+      <div class="item"><%= f.label 'メールアドレス' %></div>
+      <div class="item"><%= f.email_field :email %></div>
+      <div class="item"><%= f.label 'パスワード' %></div>
+      <div class="item"><%= f.password_field :password %></div>
+      <div class="item"><%= f.label 'パスワード確認' %></div>
+      <div class="item"><%= f.password_field :password_confirmation %></div>
+      <%= f.submit "新規登録", class: 'new_account_button' %>
+    <% end %>
+  </div>
+</div>

@@ -5,7 +5,7 @@
   display: inline-flex;
   justify-content: space-between;
 
-  .item{
+  .item {
     background-color: transparent;
     color: #fff;
     display: inline-block;
@@ -20,7 +20,7 @@
     vertical-align: top;
     white-space: nowrap;
 
-    .a{
+    .a {
       cursor: pointer;
     }
   }
@@ -50,6 +50,7 @@
   flex-direction: column;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  border-radius: 3px;
 
 
   .tweet_head {
