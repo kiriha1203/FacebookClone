@@ -39,9 +39,6 @@
 <div class="body">
   <div class="body_mid">
     <div class="infomation">
-      <% flash.each do |key, value| %>
-        <%= content_tag(:div, value, class: "#{key}") %>
-      <% end %>
       <% if flash.notice.present? %>
         <div class="alert alert-success">
           <%= flash[:notice] %>
