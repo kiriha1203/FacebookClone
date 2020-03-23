@@ -51,9 +51,9 @@
 .body {
   background-color: #E9EBEE;
   min-width: 100vw;
-  /*min-height: calc(100-header); */
+  min-height: calc(100vh - 40px);
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: center;
 }
 
