@@ -61,3 +61,7 @@ group :development do
 end
 
 gem 'bcrypt'
+
+group :development do
+  gem 'dotenv-rails'
+end

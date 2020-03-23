@@ -1,0 +1,17 @@
+<h3>以下の内容で、投稿する。</h3>
+
+<div class="nav.justify-content-end">
+  <%= link_to '一覧', tasks_path, class: 'nav-link' %>
+</div>
+
+
+<%= form_with(model: @task, local: true) do |f| %>
+  <div class="form-group">
+    <%= f.hidden_field :content %>
+    <%= f.label '内容' %>
+    <%= @task.content %>
+  </div>
+
+  <%= f.submit "投稿する", class: 'btn btn-primary' %>
+  <%= f.submit "戻る", name: 'back', class: 'btn btn-primary' %>
+<% end %>
