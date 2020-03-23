@@ -67,3 +67,5 @@ group :development do
 end
 
 gem 'mini_magick'
+
+gem 'rails_12factor', group: :production
