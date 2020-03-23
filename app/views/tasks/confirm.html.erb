@@ -8,8 +8,17 @@
 <%= form_with(model: @task, local: true) do |f| %>
   <div class="form-group">
     <%= f.hidden_field :content %>
-    <%= f.label '内容' %>
-    <%= @task.content %>
+    <div class="item"><%= f.label '内容' %></div>
+    <div class="item"><%= @task.content %></div>
+    <div class="item"><%= f.label '画像' %></div>
+    <div class="item">
+      <% if @task.image.attached? %>
+        <%= f.hidden_field :image, value: f.object.image.signed_id %>
+        <%= image_tag(@task.image, class: 'image') %>
+      <% else %>
+        <%= 'なし' %>
+      <% end %>
+    </div>
   </div>
 
   <%= f.submit "投稿する", class: 'btn btn-primary' %>
