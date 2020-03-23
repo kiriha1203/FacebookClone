@@ -14,3 +14,7 @@
     transform: translateX(-3px);
   }
 }
+
+.image {
+  max-width: 60vw; /* 画像幅以上拡大しないようにする指定 */
+}

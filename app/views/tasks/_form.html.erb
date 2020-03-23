@@ -13,6 +13,8 @@
   <div class="form-group">
     <%= f.label '内容' %>
     <%= f.text_area :content, row: 5, class: 'form-control', id: 'task_content' %>
+    <%= f.label '画像' %>
+    <%= f.file_field :image, class: 'form-control' %>
   </div>
 
   <%= f.submit nil, class: 'btn btn-primary' %>

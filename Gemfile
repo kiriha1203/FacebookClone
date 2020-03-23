@@ -65,3 +65,5 @@ gem 'bcrypt'
 group :development do
   gem 'dotenv-rails'
 end
+
+gem 'mini_magick'

@@ -1,11 +1,32 @@
 
 .header_container {
+  height: 40px;
   min-width: 100vw;
   background-color: #4267B2;
   display: inline-flex;
   justify-content: space-between;
 
-  .item {
+  .title {
+    background-color: transparent;
+    color: #fff;
+    display: inline-block;
+    font-size: 40px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    height: 35px;
+    line-height: 28px;
+    padding: 4px 10px 1px;
+    position: relative;
+    text-decoration: none;
+    vertical-align: top;
+    white-space: nowrap;
+    background: -webkit-linear-gradient(0deg, #c5acac, #ff8407);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }
+
+  .headers {
     background-color: transparent;
     color: #fff;
     display: inline-block;
@@ -15,6 +36,7 @@
     height: 27px;
     line-height: 28px;
     padding: 0 10px 1px;
+    margin-top: 8px;
     position: relative;
     text-decoration: none;
     vertical-align: top;
@@ -51,6 +73,8 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 3px;
+  padding-left: 1rem;
+
 
 
   .tweet_head {
@@ -58,6 +82,10 @@
     justify-content: space-between;
 
     .tweet_head_index_user_created_at {
+
+      .user_n {
+        font-size: 30px;
+      }
     }
 
     .tweet_head_buttons {
@@ -121,3 +149,7 @@
 .tweet_content_picture {
 }
 
+
+.link {
+  color: white;
+}
