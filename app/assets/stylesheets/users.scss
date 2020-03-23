@@ -1,0 +1,41 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.create_account_body {
+  display: flex;
+
+  .create_account_description {
+    margin-right: 20px;
+
+    .resize_image img {
+      width: 100%;
+    }
+  }
+
+  .create_account_form {
+    min-width: 180px;
+    padding-left: 40px;
+
+    .new_account_button {
+      display: inline-block;
+      text-align: center;
+      font-size: 10px;
+      color: #FFF;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 8px;
+      margin-top: 15px;
+      margin-left: calc(76px - 41px );
+      border-radius: 4px;
+      background-image: linear-gradient(-90deg, #FF006E, #FFD500);
+      transition: .5s;
+      background-size: 200%;
+
+      &:hover {
+        background-position: right center;
+      }
+    }
+  }
+}
+
+

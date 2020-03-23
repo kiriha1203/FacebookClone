@@ -1,0 +1,9 @@
+
+<div class="login">
+  <p class="sign" align="center">Log in</p>
+  <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+    <div class="item" style="margin-top: 40px;"><%= f.email_field :email, class: 'email', :placeholder => "Email" %></div>
+    <div class="item" style="margin-top: 30px;"><%= f.password_field :password, class: 'pass', :placeholder => "Password" %></div>
+    <%= f.submit "Log in", class: 'login_button' %>
+  <% end %>
+</div>

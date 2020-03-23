@@ -1,0 +1,32 @@
+<h3>投稿一覧</h3>
+
+<%= link_to '投稿を作成', new_task_path, class: 'create_button' %>
+
+<% @tasks.each do |task| %>
+
+  <div class="tweet_box">
+
+    <div class="tweet_head">
+
+      <div class="tweet_head_index_user_created_at">
+        <p class="user_n"><%= task.user.name %></p>
+        <p><%= task.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+      </div>
+
+      <div class="tweet_head_buttons">
+        <%= link_to '詳細', task_path(task), class: 'show_button' %>
+        <% if task.user.name == current_user.name %>
+          <%= link_to '編集', edit_task_path(task), class: 'buttons' %>
+          <%= link_to '削除', task, method: :delete, data: {confirm: "削除してもよろしいですか？"},
+                      class: 'delete_button' %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="tweet_content_picture">
+      <p><%= task.content %></p>
+      <p><%= image_tag(task.image, class: 'image') if task.image.attached? %></p>
+    </div>
+  </div>
+
+<% end %>

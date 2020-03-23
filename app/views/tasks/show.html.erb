@@ -1,0 +1,25 @@
+<h3>投稿の詳細</h3>
+
+<div class="nav.justify-content-end">
+  <%= link_to '一覧', tasks_path, class: 'nav-link' %>
+</div>
+
+<div class="main_box">
+  <div class="main_index">
+      <p>ユーザー名</p>
+      <p><%=current_user.name %></p>
+      <p>作成日時</p>
+      <p><%= @task.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+      <p>内容</p>
+      <p><%= simple_format(h(@task.content), {}, sanitize: false, wrapper_tag: "div") %></p>
+      <p><%= image_tag(@task.image, class: 'show_image' ) if @task.image.attached? %></p>
+      <p>更新日時</p>
+      <p><%= @task.updated_at.strftime("%Y-%m-%d %H:%M") %></p>
+  </div>
+</div>
+
+<% if @task.user.name == current_user.name %>
+  <%= link_to '編集', edit_task_path, class: 'buttons' %>
+  <%= link_to '削除', edit_task_path, method: :delete, data: {confirm: "削除してもよろしいですか？"},
+              class: 'delete_button' %>
+<% end %>
