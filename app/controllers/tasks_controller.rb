@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :login_or
+  before_action :check_login_or_kick_session
   before_action :set_authentication, only: [:edit, :update, :destroy]
 
   def index
@@ -48,7 +48,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:content, :name, :image)
+    params.require(:task).permit(:content, :image)
   end
 
   def set_authentication
@@ -58,7 +58,7 @@ class TasksController < ApplicationController
     end
   end
 
-  def login_or
+  def check_login_or_kick_session
     unless logged_in? then
       redirect_to new_session_url
     end
