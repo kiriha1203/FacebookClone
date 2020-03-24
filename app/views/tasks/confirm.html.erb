@@ -4,7 +4,6 @@
   <%= link_to '一覧', tasks_path, class: 'nav-link' %>
 </div>
 
-
 <%= form_with(model: @task, local: true) do |f| %>
   <div class="form-group">
     <%= f.hidden_field :content %>

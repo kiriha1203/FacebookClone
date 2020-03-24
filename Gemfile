@@ -35,7 +35,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #以下追加
 gem 'bootstrap'
 
-
 group :development, :test do
   gem 'pry-rails'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
   gem 'pry-doc'    # methodを表示
@@ -43,14 +42,11 @@ group :development, :test do
   gem 'pry-stack_explorer' # スタックをたどれる
 end
 
-
 gem 'annotate'
-
 
 group :development do
   gem "view_source_map"
 end
-
 
 group :development do
   # エラー画面をわかりやすく整形してくれる
